@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xjw.dao.UserDao">
+    <resultMap id="userMap" type="com.xjw.entity.User">
+        <result property="userId" column="user_id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+    </resultMap>
+    <select id="selectUserMessageById" resultType="com.xjw.entity.User" resultMap="userMap">
+        select * from user where user_id = #{userId}
+    </select>
+</mapper>
